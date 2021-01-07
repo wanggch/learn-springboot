@@ -14,6 +14,9 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    /**
+     * 用户列表
+     */
     @RequestMapping("/index")
     public ModelAndView index() {
         ModelAndView mv = new ModelAndView();

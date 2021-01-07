@@ -13,6 +13,10 @@ public class UserService {
     @Resource
     private UserRepository userRepository;
 
+    /**
+     * 获取所有用户列表
+     * @return 所有用户列表
+     */
     public List<User> listAllUsers() {
         return userRepository.findAll();
     }
