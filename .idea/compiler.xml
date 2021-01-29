@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="learn-springboot-thymeleaf" />
+        <module name="learn-springboot-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="learn-springboot" target="1.8" />
+      <module name="learn-springboot-redis" target="1.8" />
       <module name="learn-springboot-thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>

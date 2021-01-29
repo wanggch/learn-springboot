@@ -1,4 +1,4 @@
-package jenny.learn.springboot.thymeleaf.entity;
+package jenny.learn.springboot.redis.entity;
 
 import lombok.Data;
 

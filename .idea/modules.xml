@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/learn-springboot.iml" filepath="$PROJECT_DIR$/learn-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-springboot-redis/learn-springboot-redis.iml" filepath="$PROJECT_DIR$/learn-springboot-redis/learn-springboot-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-thymeleaf/learn-springboot-thymeleaf.iml" filepath="$PROJECT_DIR$/learn-springboot-thymeleaf/learn-springboot-thymeleaf.iml" />
     </modules>
   </component>
