@@ -37,6 +37,16 @@
             <artifactId>h2</artifactId>
             <version>${h2database.version}</version>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
     </dependencies>
 
 

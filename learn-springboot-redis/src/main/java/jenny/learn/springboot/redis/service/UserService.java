@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Service
@@ -43,7 +44,7 @@ public class UserService {
         if (Objects.isNull(user)) {
             throw new RuntimeException(String.format("Can not find user [ id=%s ].", id));
         } else {
-            redisTemplate.opsForValue().set(redisKey, user);
+            redisTemplate.opsForValue().set(redisKey, user, 5, TimeUnit.MINUTES);
         }
         return user;
     }
