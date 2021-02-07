@@ -1,5 +1,14 @@
 
+
+## learn-springboot-redis
+
+- 数据库：H2
+- 工具类库：hutool
+- JSON解析：Gson
+
 ## learn-springboot-thymeleaf
+
+- 数据库：H2
 
 增删改查
 

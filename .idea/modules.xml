@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/learn-springboot.iml" filepath="$PROJECT_DIR$/learn-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-springboot-dubbo-api/learn-springboot-dubbo-api.iml" filepath="$PROJECT_DIR$/learn-springboot-dubbo-api/learn-springboot-dubbo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-springboot-dubbo-consumer/learn-springboot-dubbo-consumer.iml" filepath="$PROJECT_DIR$/learn-springboot-dubbo-consumer/learn-springboot-dubbo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-springboot-dubbo-provider/learn-springboot-dubbo-provider.iml" filepath="$PROJECT_DIR$/learn-springboot-dubbo-provider/learn-springboot-dubbo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-jpa/learn-springboot-jpa.iml" filepath="$PROJECT_DIR$/learn-springboot-jpa/learn-springboot-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-redis/learn-springboot-redis.iml" filepath="$PROJECT_DIR$/learn-springboot-redis/learn-springboot-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-thymeleaf/learn-springboot-thymeleaf.iml" filepath="$PROJECT_DIR$/learn-springboot-thymeleaf/learn-springboot-thymeleaf.iml" />

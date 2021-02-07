@@ -2,17 +2,24 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="learn-springboot-thymeleaf" />
         <module name="learn-springboot-redis" />
+        <module name="learn-springboot-dubbo-api" />
         <module name="learn-springboot-jpa" />
+        <module name="learn-springboot-thymeleaf" />
+        <module name="learn-springboot-dubbo-provider" />
+        <module name="learn-springboot-dubbo-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="learn-springboot" target="1.8" />
+      <module name="learn-springboot-dubbo-api" target="1.8" />
+      <module name="learn-springboot-dubbo-consumer" target="1.8" />
+      <module name="learn-springboot-dubbo-provider" target="1.8" />
       <module name="learn-springboot-jpa" target="1.8" />
       <module name="learn-springboot-redis" target="1.8" />
       <module name="learn-springboot-thymeleaf" target="1.8" />
