@@ -1,0 +1,5 @@
+dubbo:
+  application:
+    name: learn-springboot-dubbo-provider
+    registry:
+      address: zookeeper://127.0.0.1:2181
