@@ -12,6 +12,7 @@
         <module>learn-springboot-dubbo-api</module>
         <module>learn-springboot-dubbo-consumer</module>
         <module>learn-springboot-dubbo-provider</module>
+        <module>learn-springboot-mybatis</module>
     </modules>
     <name>learn-springboot</name>
     <packaging>pom</packaging>
