@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class TransferLogService {
@@ -24,5 +25,9 @@ public class TransferLogService {
         transferLog.setTransferType(TransferType.getTransferType(transferType));
         transferLog.setCreateTime(new Date());
         transferLogDao.save(transferLog);
+    }
+
+    public List<TransferLog> query() {
+        return transferLogDao.query();
     }
 }

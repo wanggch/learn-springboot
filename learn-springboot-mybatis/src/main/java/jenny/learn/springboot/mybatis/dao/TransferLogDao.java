@@ -11,4 +11,6 @@ public interface TransferLogDao {
     void save(TransferLog transferLog);
 
     void saveAll(List<TransferLog> transferLogList);
+
+    List<TransferLog> query();
 }

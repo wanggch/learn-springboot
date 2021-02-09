@@ -13,4 +13,8 @@
             (#{item.id}, #{item.amount}, #{item.transferDate}, #{item.transferType}, #{item.createTime})
         </foreach>
     </insert>
+    <select id="query" resultType="TransferLog">
+        select id, amount, transfer_date as transferDate, transfer_type as transferType, create_time as createTime
+        from t_transfer_log order by transfer_date desc
+    </select>
 </mapper>
