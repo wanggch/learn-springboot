@@ -6,18 +6,40 @@ import lombok.Getter;
 
 import java.util.Objects;
 
+/**
+ * 交易类型
+ * @author: wanggc
+ */
 @Getter
 @AllArgsConstructor
 public enum TransferType implements BaseEnum {
 
-    IN("1", "转入"), OUT("2", "转出");
+    /**
+     * 转入
+     */
+    IN("1", "转入"),
+    /**
+     * 转出
+     */
+    OUT("2", "转出");
 
+    /**
+     * 编码
+     */
     private String code;
+    /**
+     * 名称
+     */
     private String name;
 
-    public static TransferType getTransferType(String type) {
+    /**
+     * 根据交易类型编码获取交易枚举类型
+     * @param code 交易类型编码
+     * @return 交易枚举类型
+     */
+    public static TransferType getTransferType(String code) {
         for (TransferType transferType : TransferType.values()) {
-            if (Objects.equals(type, transferType.getCode())) {
+            if (Objects.equals(code, transferType.getCode())) {
                 return transferType;
             }
         }
