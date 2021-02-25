@@ -1,5 +1,6 @@
 package jenny.learn.springboot.security.util;
 
+import com.google.common.collect.Maps;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -9,65 +10,99 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TokenUtils {
 
     private static Logger LOGGER = LoggerFactory.getLogger(TokenUtils.class);
 
-    /*
-    Bearer
+    /**
+     * 签名密钥
      */
+    private static final String SECRET = "mySecret";
+    /**
+     * 签发者
+     */
+    private static final String ISSUER = "jenny";
+    /**
+     * 过期时间：5分钟
+     */
+    private static Long expiration = new Long(300000);
 
-    public static final String CLAIM_KEY_USERNAME = "sub";
-    public static final String CLAIM_KEY_CREATED = "created";
-    public static final String CLAIM_KEY_SURNAME = "Surname";
+    /**
+     * 生成 Token
+     */
+    public static String generateToken(String username) {
+        return generateToken(username, Maps.newHashMap());
+    }
 
-    private static String secret = "mySecret";
-
-    private static Long expiration = new Long(720000);
+    /**
+     * 生成 Token
+     */
+    public static String generateToken(String username, Map<String, Object> claims) {
+        return Jwts.builder()
+                // 受众
+                .setAudience(username)
+                // 面向的用户
+                .setSubject(username)
+                // 签发者
+                .setIssuer(ISSUER)
+                .setClaims(claims)
+                // 签发时间
+                .setIssuedAt(new Date())
+                // 过期时间
+                .setExpiration(expiration())
+                // 签名算法、签名密钥
+                .signWith(SignatureAlgorithm.HS512, SECRET)
+                .compact();
+    }
 
     /**
      * 从 Token 中获取 username
      */
-    public static String getUsernameFromToken(String token) {
-        String username = "";
+    public static String getUserCodeFromToken(String token) {
+        String userCode = "";
         try {
             final Claims claims = getClaimsFromToken(token);
-            if (null == claims || StringUtils.isEmpty(claims.getSubject())) return username;
-            username = claims.getSubject();
+            if (Objects.isNull(claims) || StringUtils.isEmpty(claims.getSubject())) {
+                return userCode;
+            }
+            userCode = claims.getSubject();
         } catch (Exception e) {
             LOGGER.error("ger username from token error. ", e);
-            username = e.toString();
         }
-        return username;
+        return userCode;
     }
 
     /**
      * 从 Token 中获取创建时间
      */
-    public static Date getCreatedDateFromToken(String token) {
-        Date created;
+    public static Date getIssuedAt(String token) {
+        Date issuedAt;
         try {
             final Claims claims = getClaimsFromToken(token);
-            if (null == claims || null == claims.get(CLAIM_KEY_CREATED)) return null;
-            created = new Date((Long) claims.get(CLAIM_KEY_CREATED));
+            if (Objects.isNull(claims) || Objects.isNull(claims.getIssuedAt())) {
+                return null;
+            }
+            issuedAt = claims.getIssuedAt();
         } catch (Exception e) {
             // TODO
-            created = null;
+            issuedAt = null;
         }
-        return created;
+        return issuedAt;
     }
 
     /**
      * 从 Token 中获取过时时间
      */
-    public static Date getExpirationDateFromToken(String token) {
+    public static Date getExpiration(String token) {
         Date expiration;
         try {
             final Claims claims = getClaimsFromToken(token);
-            if (null == claims || null == claims.getExpiration()) return null;
+            if (Objects.isNull(claims) || Objects.isNull(claims.getExpiration())) {
+                return null;
+            }
             expiration = claims.getExpiration();
         } catch (Exception e) {
             // TODO
@@ -80,7 +115,7 @@ public class TokenUtils {
         Claims claims;
         try {
             claims = Jwts.parser()
-                    .setSigningKey(secret)
+                    .setSigningKey(SECRET)
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
@@ -90,7 +125,6 @@ public class TokenUtils {
                 LOGGER.error("解析Token信息时发生异常：", e);
                 claims = null;
             }
-
         }
         return claims;
     }
@@ -98,63 +132,28 @@ public class TokenUtils {
     /**
      * 生成过期时间
      */
-    private static Date generateExpirationDate() {
-        return new Date(System.currentTimeMillis() + expiration * 1000);
+    private static Date expiration() {
+        return new Date(System.currentTimeMillis() + expiration);
     }
 
     /**
      * 验证 Token 是否过期
      */
     private static Boolean isTokenExpired(String token) {
-        final Date expiration = getExpirationDateFromToken(token);
-        if (null == expiration) return true;
+        final Date expiration = getExpiration(token);
+        if (Objects.isNull(expiration)) {
+            return true;
+        }
         return expiration.before(new Date());
     }
 
-    private static Boolean isCreatedBeforeLastPasswordReset(Date created, Date lastPasswordReset) {
-        return (lastPasswordReset != null && created.before(lastPasswordReset));
-    }
+//    private static Boolean isCreatedBeforeLastPasswordReset(Date created, Date lastPasswordReset) {
+//        return (lastPasswordReset != null && created.before(lastPasswordReset));
+//    }
 
-    /**
-     * 生成 Token
-     */
-    public static String generateToken(String username) {
-        Map<String, Object> claims = new HashMap<>();
-        claims.put(CLAIM_KEY_USERNAME, username);
-        claims.put(CLAIM_KEY_CREATED, new Date());
-        return generateToken(claims);
-    }
-
-    /**
-     * 生成 Token
-     */
-    public static String generateToken(Map<String, Object> claims) {
-        return Jwts.builder()
-                .setClaims(claims)
-                .setExpiration(generateExpirationDate())
-                .signWith(SignatureAlgorithm.HS512, secret)
-                .compact();
-    }
-
-    public static Boolean canTokenBeRefreshed(String token, Date lastPasswordReset) {
-        final Date created = getCreatedDateFromToken(token);
-        return !isCreatedBeforeLastPasswordReset(created, lastPasswordReset)
-                && !isTokenExpired(token);
-    }
-
-    /**
-     * 刷新 Token
-     */
-    public static String refreshToken(String token) {
-        String refreshedToken;
-        try {
-            final Claims claims = getClaimsFromToken(token);
-            if (null == claims) return null;
-            claims.put(CLAIM_KEY_CREATED, new Date());
-            refreshedToken = generateToken(claims);
-        } catch (Exception e) {
-            refreshedToken = null;
-        }
-        return refreshedToken;
-    }
+//    public static Boolean canTokenBeRefreshed(String token, Date lastPasswordReset) {
+//        final Date created = getIssuedAt(token);
+//        return !isCreatedBeforeLastPasswordReset(created, lastPasswordReset)
+//                && !isTokenExpired(token);
+//    }
 }
