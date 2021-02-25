@@ -13,6 +13,7 @@
         <module>learn-springboot-dubbo-consumer</module>
         <module>learn-springboot-dubbo-provider</module>
         <module>learn-springboot-mybatis</module>
+        <module>learn-springboot-security</module>
     </modules>
     <name>learn-springboot</name>
     <packaging>pom</packaging>

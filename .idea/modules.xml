@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-jpa/learn-springboot-jpa.iml" filepath="$PROJECT_DIR$/learn-springboot-jpa/learn-springboot-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-mybatis/learn-springboot-mybatis.iml" filepath="$PROJECT_DIR$/learn-springboot-mybatis/learn-springboot-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-redis/learn-springboot-redis.iml" filepath="$PROJECT_DIR$/learn-springboot-redis/learn-springboot-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-springboot-security/learn-springboot-security.iml" filepath="$PROJECT_DIR$/learn-springboot-security/learn-springboot-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-springboot-thymeleaf/learn-springboot-thymeleaf.iml" filepath="$PROJECT_DIR$/learn-springboot-thymeleaf/learn-springboot-thymeleaf.iml" />
     </modules>
   </component>
