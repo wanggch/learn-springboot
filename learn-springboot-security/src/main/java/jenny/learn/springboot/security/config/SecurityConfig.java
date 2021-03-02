@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 /**
-* @description 安全配置
+* @description 安全配置，数据库连接密码
 * @author wanggc
 * @date 2020/11/6 2:36 下午
 */

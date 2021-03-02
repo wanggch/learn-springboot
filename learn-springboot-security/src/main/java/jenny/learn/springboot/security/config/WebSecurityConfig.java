@@ -17,7 +17,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
     }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // 跨域伪造请求限制无效
@@ -35,19 +34,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 禁用缓存
                 .and().headers().cacheControl().disable();
     }
-
     // 获取用户账号、密码及权限信息
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsServiceImpl();
     }
-
     // 密码加密方式
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
     // 注册AuthenticationManager Bean
     @Override
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
