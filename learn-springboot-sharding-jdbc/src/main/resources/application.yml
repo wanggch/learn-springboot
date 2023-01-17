@@ -1,0 +1,56 @@
+server:
+  port: 8992
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  shardingsphere:
+    datasource:
+      names: ds0
+      ds0:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/jenny?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+        type: com.zaxxer.hikari.HikariDataSource
+        username: root
+        password: abc123
+    sharding:
+      # 表分片
+      tables:
+        t_order:
+          # 主表分片规则表名
+          actual-data-nodes: ds0.t_order_$->{0..9}
+          table-strategy:
+            # 复合分片
+            complex:
+              # 分片键
+              sharding-columns: order_id,user_id,create_time
+              # 指定自定义分片算法类的全路径
+              algorithm-class-name: learn.springboot.sharding.jdbc.config.MyComplexKeysShardingAlgorithm
+    #          defaultTableStrategy:
+    # 打开sql控制台输出日志
+    props:
+      sql:
+        show: true
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mappers/**/*.xml
+  # 别名包扫描路径，通过该属性可以给包中的类注册别名
+  type-aliases-package: learn.springboot.sharding.jdbc.entity
+  configuration:
+    # 不开启二级缓存
+    cache-enabled: false
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#mybatis:
+#  mapper-locations: classpath:mappers/**/*.xml
+#  config-location: classpath:mybatis-config.xml
+app:
+  workerId: 1
+  datacenterId: 1

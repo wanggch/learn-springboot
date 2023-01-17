@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 展示接收到的消息 -->
+        <div class="msg">{{ msg }}</div>
+        <div class="button-wrapper">
+            <!-- 连接按钮 -->
+            <button @click="connect">连接</button>
+            <!-- 关闭连接按钮 -->
+            <button @click="disconnect">关闭连接</button>
+            <!-- 发送消息按钮 -->
+            <button @click="sendMsg">准备好了</button>
+        </div>
+    </div>
+    <!-- 引入Vue3 -->
+    <script src="js/vue.global.js"></script>
+    <script>
+        const App = {
+            data() {
+                return {
+                    websocket: null,
+                    // 接收到的消息内容
+                    msg: ''
+                }
+            },
+            methods: {
+                // 发送消息
+                sendMsg() {
+                    console.log('send msg.')
+                    if (this.websocket == null || this.websocket.readyState != 1) {
+                        alert('请先连接websocket服务器！')
+                        return
+                    }
+                    var data = {
+                        msg: '准备好了，登记吧',
+                        state: 1
+                    }
+                    this.websocket.send(JSON.stringify(data))
+                },
+                // 连接
+                connect() {
+                    console.log('connect.')
+                    var _this = this;
+                    if (this.websocket && this.websocket.readyState == 1) {
+                        this.websocket.close()
+                        this.connectBtnText = '连接服务器'
+                    }
+                    this.websocket = new WebSocket('ws://127.0.0.1:18528/websocket/computer')
+                    this.websocket.onopen = function () {
+                        this.connectBtnText = '关闭服务器'
+                    }
+                    this.websocket.onmessage = function (event) {
+                        console.log(event.data)
+                        debugger
+                        var data = JSON.parse(event.data)
+                        if (data.state == 1) {
+                            _this.msg = data.msg
+                            console.log(_this.msg)
+                        }
+                    }
+                },
+                // 关闭连接
+                disconnect() {
+                    console.log('disconnect.')
+                    this.websocket.close()
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app');
+    </script>
+
+</body>
+</html>

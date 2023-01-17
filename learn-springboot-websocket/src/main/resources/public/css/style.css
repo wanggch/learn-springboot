@@ -1,0 +1,11 @@
+.msg {
+    display: block;
+    height: 100px;
+    background-color: darkseagreen;
+}
+.button-wrapper {
+    margin-top: 10px;
+}
+.button-wrapper button {
+    margin-right: 20px;
+}

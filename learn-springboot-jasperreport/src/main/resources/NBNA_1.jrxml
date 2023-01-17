@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NBNA_1" pageWidth="595" pageHeight="842" columnWidth="475" leftMargin="60" rightMargin="60" topMargin="20" bottomMargin="20" uuid="729ec008-d98e-47a1-ad59-46cd07e747f7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="gender" class="java.lang.String"/>
+	<parameter name="birthDay" class="java.lang.String"/>
+	<parameter name="linkManName" class="java.lang.String"/>
+	<parameter name="linkManPhone" class="java.lang.String"/>
+	<parameter name="assessTime" class="java.lang.String"/>
+	<parameter name="score" class="java.lang.String"/>
+	<parameter name="assessStandard" class="java.lang.String"/>
+	<parameter name="guidance" class="java.lang.String"/>
+	<parameter name="testMethod" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="115" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="55" width="475" height="29" forecolor="#333333" uuid="8968987e-107b-4dd5-9af7-3491774a01d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[机构名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="85" width="475" height="29" forecolor="#333333" uuid="57e7fee7-c6c0-4049-b586-0b816d4268b3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[新生儿20项行为神经测检方法(NBNA)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="425" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="36" width="72" height="24" forecolor="#333333" uuid="200398d2-fba6-478c-980f-7528df585cf4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[姓名]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="36" width="90" height="24" forecolor="#333333" uuid="32fd0089-56a1-4842-88e2-9afdb7026e07">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="162" y="36" width="72" height="24" forecolor="#333333" uuid="bdc8fe9b-17de-4440-8a80-0551eda08296">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[性别]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="234" y="36" width="90" height="24" forecolor="#333333" uuid="1d7f4426-47ca-4520-94eb-c62118c3168c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gender}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="324" y="36" width="67" height="24" forecolor="#333333" uuid="32b41cef-0ecd-46d5-8924-88fc6da25494">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[出生日期]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="391" y="36" width="84" height="24" forecolor="#333333" uuid="1b77bcbd-edc5-4d53-818f-1895e31559ab">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{birthDay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="72" height="24" forecolor="#333333" uuid="53a1dc82-e10a-4287-b3f1-a6e14ad4c444">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[联系人]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="60" width="90" height="24" forecolor="#333333" uuid="12c76bd7-102d-4314-91ca-9ab00da44594">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{linkManName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="162" y="60" width="72" height="24" forecolor="#333333" uuid="03a5b126-ba2f-4dd2-8ad6-454238a60da1">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[联系电话]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="234" y="60" width="90" height="24" forecolor="#333333" uuid="562a128d-d80e-4c50-951f-55290fbc098d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{linkManPhone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="324" y="60" width="67" height="24" forecolor="#333333" uuid="7baa3904-4a67-41a9-b7aa-1fbaef365d64">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[测评时间]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="391" y="60" width="84" height="24" forecolor="#333333" uuid="b8e81129-a685-4c8c-89f5-18d48cabdeae">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{assessTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="84" width="72" height="24" forecolor="#333333" uuid="00a63a13-7d80-4982-8e04-44e38097d7ac">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<text><![CDATA[测试方法]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="84" width="403" height="24" forecolor="#333333" uuid="84db7af9-6634-4f14-91f5-75f10f36eb10">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{testMethod}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="108" width="475" height="146" uuid="de7acbfe-647f-4f44-b60a-91c4dec83508">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="1.0" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="1.0" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="1.0" lineColor="#DDDDDD"/>
+				</box>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" backcolor="#40ADFF" uuid="4b052f13-b155-4808-a7fd-7bbc456c7fb9">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[评定结果]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="146" width="475" height="146" uuid="75081006-9b9c-4cbf-9f55-52eddcf314b2">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineColor="#DDDDDD"/>
+						<leftPen lineWidth="1.0" lineColor="#DDDDDD"/>
+						<bottomPen lineWidth="1.0" lineColor="#DDDDDD"/>
+						<rightPen lineWidth="1.0" lineColor="#DDDDDD"/>
+					</box>
+					<staticText>
+						<reportElement mode="Opaque" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" backcolor="#40ADFF" uuid="be6f3771-e0dd-4bf2-9afb-3e43a5ba0a53">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="16" isBold="true"/>
+						</textElement>
+						<text><![CDATA[指导意见]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="31" y="49" width="428" height="80" forecolor="#333333" uuid="dfd661e4-45c3-4a1a-bfdd-220dd18e2610">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<textElement>
+							<font fontName="微软雅黑" size="12"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{guidance}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<staticText>
+					<reportElement x="1" y="42" width="88" height="24" forecolor="#333333" uuid="ddddbb1e-c671-4631-9726-92ffd9e3976b">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font fontName="微软雅黑" size="12"/>
+					</textElement>
+					<text><![CDATA[原始得分：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="89" y="40" width="50" height="24" forecolor="#333333" uuid="53e50b2e-050b-4eed-a82c-c7fea06ae0c5">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="微软雅黑" size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{score}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="66" width="88" height="24" forecolor="#333333" uuid="8c3677c1-160c-45d7-8a5d-b895d7fdaab1">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font fontName="微软雅黑" size="12"/>
+					</textElement>
+					<text><![CDATA[评定标准：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="89" y="66" width="370" height="64" forecolor="#333333" uuid="2e835845-0eed-4925-ab94-ce962d7c0e9c"/>
+					<textElement>
+						<font fontName="微软雅黑" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{assessStandard}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

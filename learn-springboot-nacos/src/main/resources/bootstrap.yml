@@ -1,0 +1,14 @@
+server:
+  port: 9944
+spring:
+  application:
+    name: learn-springboot-nacos
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        group: ${spring.profiles.active}
+        prefix: ${spring.application.name}
+        server-addr: 127.0.0.1:8848
+  profiles:
+    active: dev

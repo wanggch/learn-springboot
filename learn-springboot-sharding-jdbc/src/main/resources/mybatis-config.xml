@@ -1,0 +1,13 @@
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <!-- 映射文件中的类不用写全路径了-->
+        <package name="jenny.learn.springboot.mybatis.entity"/>
+    </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="jenny.learn.springboot.mybatis.handler.BaseEnumTypeHandler"
+                     javaType="jenny.learn.springboot.mybatis.enums.TransferType"/>
+    </typeHandlers>
+</configuration>

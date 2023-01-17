@@ -1,0 +1,15 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: learn-springboot-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  profiles:
+    active: dev

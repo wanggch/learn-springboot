@@ -1,0 +1,13 @@
+
+dubbo:
+  application:
+    name: learn-springboot-dubbo-consumer
+  registry:
+    address: zookeeper://127.0.0.1:2181
+server:
+  port: 8092
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8

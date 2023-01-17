@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="华文宋体">
+        <normal>static/font/chinese.stsong.ttf</normal>
+        <bold>static/font/chinese.stsong.ttf</bold>
+        <italic>static/font/chinese.stsong.ttf</italic>
+        <boldItalic>static/font/chinese.stsong.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'华文宋体', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'华文宋体', Arial, Helvetica, sans-serif</export>
+        </exportFonts>
+    </fontFamily>
+    <fontFamily name="微软雅黑">
+        <normal>static/font/msyh.ttf</normal>
+        <bold>static/font/msyh.ttf</bold>
+        <italic>static/font/msyh.ttf</italic>
+        <boldItalic>static/font/msyh.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'微软雅黑', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'微软雅黑', Arial, Helvetica, sans-serif</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

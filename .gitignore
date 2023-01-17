@@ -1,0 +1,11 @@
+*.class
+# Log file
+*.log
+### Maven template
+target/
+.idea/
+# IntelliJ
+out/
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+*.iml
