@@ -1,6 +1,5 @@
 package jenny.learn.springboot.websocket.endpoint;
 
-import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -19,7 +18,7 @@ public class WebSocketEndPoint {
 //    private static final String CLIENT_TYPE_PC = "computer";
 //    private static final String CLIENT_TYPE_MOBILE = "mobile";
 
-    private static Map<Session, String> socketMap = new ConcurrentHashMap<>();
+    private static final Map<Session, String> socketMap = new ConcurrentHashMap<>();
 
     // 连接建立成功时触发的方法
     @OnOpen
@@ -40,15 +39,14 @@ public class WebSocketEndPoint {
     public void onMessage(String message, Session session) {
         log.info("收到来自{}的消息：{}", session, message);
         String name = socketMap.get(session);
-//        Dict data = Dict.create();
-//        data.set("state", 1);
         try {
+            String msg = StrUtil.format("服务端收到来自{}的消息：{}", name, message);
             // 遍历所有建立连接的客户端，给其它客户端发送消息
             for (Session client : socketMap.keySet()) {
-                if (StrUtil.equals(socketMap.get(client), name)) {
-                    continue;
-                }
-                client.getBasicRemote().sendText(message);
+//                if (StrUtil.equals(socketMap.get(client), name)) {
+//                    continue;
+//                }
+                client.getBasicRemote().sendText(msg);
             }
         } catch (Exception e) {
             log.error("向客户端发送消息时发生错误：", e);

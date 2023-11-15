@@ -23,7 +23,6 @@
         <module>learn-springboot-sharding-jdbc</module>
         <module>learn-springboot-upload</module>
         <module>learn-springboot-minio</module>
-        <module>learn-springboot-jimu</module>
         <module>learn-springboot-excel</module>
         <module>learn-springboot-websocket</module>
         <module>learn-springboot-nacos</module>
@@ -32,6 +31,7 @@
         <module>learn-springboot-xxljob</module>
         <module>learn-springboot-docker</module>
         <module>learn-springboot-undertow</module>
+        <module>learn-springboot-kaptcha</module>
     </modules>
     <name>learn-springboot</name>
     <packaging>pom</packaging>

@@ -1,4 +1,4 @@
-package jenny.learn.springboot.redis.config;
+package jenny.learn.springboot.kaptcha.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -18,14 +18,6 @@ import org.springframework.scripting.support.ResourceScriptSource;
 
 @Configuration
 public class RedisConfig {
-
-    @Bean
-    public RedisScript<Long> limitRedisScript() {
-        DefaultRedisScript redisScript = new DefaultRedisScript<>();
-        redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("scripts/redis/limit.lua")));
-        redisScript.setResultType(Long.class);
-        return redisScript;
-    }
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
